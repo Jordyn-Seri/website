@@ -38,7 +38,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
           >
-            1099 Project Manager for Health Systems and Startups. I leverage AI, automation, and data systems to buy back time for providers.
+            Project Manager for Health Systems and Startups. I leverage AI, automation, and data systems to buy back time for your company.
           </motion.p>
 
           <motion.div

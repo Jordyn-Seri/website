@@ -7,10 +7,10 @@ const certifications = [
 ];
 
 const skills = [
-  "Dashboard Building",
+  "AI Automation & Strategy",
   "Healthcare Industry Compliance",
   "Continuous Improvement",
-  "AI & Automation Strategy",
+  "Dashboard Building",
   "Stakeholder Management",
   "Data Systems Design",
 ];
