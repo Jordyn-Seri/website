@@ -1,0 +1,110 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+
+const testimonials = [
+  {
+    quote:
+      "Jordyn transformed our operations — what used to take weeks now happens automatically. Her project management skills are unmatched.",
+    name: "Boutique Consulting Firm CO",
+    role: "Executive Partner",
+  },
+  {
+    quote:
+      "Working with Jordyn on our Medicaid program was a game-changer. She brought structure, accountability, and measurable results to our team.",
+    name: "Medicaid Program Director",
+    role: "State Health Agency",
+  },
+  {
+    quote:
+      "Jordyn helped us build the dashboards and workflows we needed to scale. She thinks like a founder and executes like a seasoned PM.",
+    name: "Startup Founder",
+    role: "HealthTech Company",
+  },
+];
+
+const TestimonialsSection = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
+  const next = () => setCurrent((c) => (c + 1) % testimonials.length);
+
+  return (
+    <section className="py-24 lg:py-32 bg-secondary">
+      <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <span className="text-primary font-semibold text-sm tracking-widest uppercase">
+            Testimonials
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mt-3">
+            What Clients Say
+          </h2>
+        </motion.div>
+
+        <div className="relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.4 }}
+              className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 sm:p-12 text-center border border-primary/10"
+            >
+              <Quote className="mx-auto mb-6 text-primary/40" size={40} />
+              <blockquote className="text-lg sm:text-xl text-secondary-foreground/90 leading-relaxed italic mb-8">
+                "{testimonials[current].quote}"
+              </blockquote>
+              <p className="font-bold text-secondary-foreground">{testimonials[current].name}</p>
+              <p className="text-sm text-primary">{testimonials[current].role}</p>
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="flex justify-center items-center gap-4 mt-8">
+            <button
+              onClick={prev}
+              className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-secondary-foreground hover:bg-primary/10 transition-colors"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <div className="flex gap-2">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                    i === current ? "bg-primary" : "bg-secondary-foreground/20"
+                  }`}
+                  aria-label={`Go to testimonial ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={next}
+              className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-secondary-foreground hover:bg-primary/10 transition-colors"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialsSection;
