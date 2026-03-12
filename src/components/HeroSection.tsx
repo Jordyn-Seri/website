@@ -18,7 +18,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 tracking-wide">
-              AI-Enhanced Healthcare Project Manager
+              Healthcare Project Manager
             </span>
           </motion.div>
 
