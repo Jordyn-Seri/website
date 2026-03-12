@@ -29,7 +29,7 @@ const HeroSection = () => {
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-secondary tracking-tight"
           >
             I Remove Administrative Obstacles.{" "}
-            <span className="text-primary">You Deliver Better Patient Outcomes.</span>
+            <span className="text-primary">You Deliver Better Outcomes.</span>
           </motion.h1>
 
           <motion.p

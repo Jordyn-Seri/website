@@ -3,7 +3,7 @@ import { Award, BarChart3, Calendar, Zap } from "lucide-react";
 
 const certifications = [
   { label: "PMP", icon: Award },
-  { label: "Monday.com (AI-Enhanced)", icon: Calendar },
+  { label: "Monday.com Training Certificate", icon: Calendar },
 ];
 
 const skills = [
