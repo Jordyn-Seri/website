@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Mountain, Bike, TreePine } from "lucide-react";
+import { Mountain, Bike, Headphones, Scissors, Bird, BookOpen } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const PersonalSection = () => {
   return (
