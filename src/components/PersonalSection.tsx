@@ -50,11 +50,14 @@ const PersonalSection = () => {
               for solving complex problems, and a commitment to delivering results that matter.
             </p>
 
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-4">
               {[
               { icon: Mountain, label: "Rock Climbing" },
               { icon: Bike, label: "Mountain Biking" },
-              { icon: TreePine, label: "Outdoors" }].
+              { icon: Headphones, label: "Podcasts" },
+              { icon: Scissors, label: "Sewing" },
+              { icon: Bird, label: "Birding" },
+              { icon: BookOpen, label: "Learning" }].
               map((item) =>
               <div key={item.label} className="flex items-center gap-2 text-sm text-muted-foreground">
                   <item.icon size={18} className="text-primary" />
