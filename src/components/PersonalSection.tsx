@@ -12,8 +12,8 @@ const PersonalSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
-          >
+            className="relative">
+            
             <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-olive/20 via-accent/30 to-olive/20 flex items-center justify-center border border-border">
               <div className="text-center p-8">
                 <Mountain className="mx-auto mb-4 text-primary" size={48} />
@@ -30,20 +30,20 @@ const PersonalSection = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
+            transition={{ duration: 0.6, delay: 0.15 }}>
+            
             <span className="text-primary font-semibold text-sm tracking-widest uppercase">
               Beyond the Data
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary mt-3 mb-6">
               The Human Behind the Data
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              When I'm not optimizing workflows or building dashboards, you'll find me
-              scaling rock faces, tearing down mountain bike trails, or simply soaking in
-              the beauty of the outdoors. I believe the same discipline, focus, and
-              problem-solving mindset that fuels my outdoor adventures is what makes me
-              effective as a project manager.
+            <p className="text-muted-foreground leading-relaxed mb-6">When I'm not optimizing workflows or building dashboards, you'll find me rock climbing 5.fun level routes, overcoming my fears on a mountain bike, or doing some other adventurous hobby in the beauty of the outdoors. That is, unless I'm whittling down my queue of podcast episodes, working on a sewing project, or identifying a backyard bird. I believe the same discipline, focus, and problem-solving mindset that fuels my love of learning new things is what makes me effective as a project manager.
+
+
+
+
+
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               I bring that same energy to every engagement — a bias toward action, a love
@@ -52,21 +52,21 @@ const PersonalSection = () => {
 
             <div className="flex gap-6">
               {[
-                { icon: Mountain, label: "Rock Climbing" },
-                { icon: Bike, label: "Mountain Biking" },
-                { icon: TreePine, label: "Outdoors" },
-              ].map((item) => (
-                <div key={item.label} className="flex items-center gap-2 text-sm text-muted-foreground">
+              { icon: Mountain, label: "Rock Climbing" },
+              { icon: Bike, label: "Mountain Biking" },
+              { icon: TreePine, label: "Outdoors" }].
+              map((item) =>
+              <div key={item.label} className="flex items-center gap-2 text-sm text-muted-foreground">
                   <item.icon size={18} className="text-primary" />
                   {item.label}
                 </div>
-              ))}
+              )}
             </div>
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default PersonalSection;

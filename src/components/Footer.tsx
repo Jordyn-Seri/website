@@ -11,7 +11,7 @@ const Footer = () => {
             <p className="text-xl font-bold text-secondary-foreground mb-2">
               Jordyn Seri<span className="text-primary">, PMP</span>
             </p>
-            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/15 text-primary text-sm font-semibold">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/15 text-sm font-semibold text-accent">
               Currently accepting new clients
             </div>
           </div>
@@ -22,22 +22,22 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="w-11 h-11 rounded-full border border-primary/20 flex items-center justify-center text-secondary-foreground hover:bg-primary/10 hover:text-primary transition-colors"
-              aria-label="LinkedIn"
-            >
+              aria-label="LinkedIn">
+              
               <Linkedin size={20} />
             </a>
             <a
               href="mailto:hello@jordynseri.com"
               className="w-11 h-11 rounded-full border border-primary/20 flex items-center justify-center text-secondary-foreground hover:bg-primary/10 hover:text-primary transition-colors"
-              aria-label="Email"
-            >
+              aria-label="Email">
+              
               <Mail size={20} />
             </a>
             <button
               onClick={scrollToTop}
               className="w-11 h-11 rounded-full border border-primary/20 flex items-center justify-center text-secondary-foreground hover:bg-primary/10 hover:text-primary transition-colors"
-              aria-label="Back to top"
-            >
+              aria-label="Back to top">
+              
               <ArrowUp size={20} />
             </button>
           </div>
@@ -49,8 +49,8 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;
