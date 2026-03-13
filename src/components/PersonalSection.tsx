@@ -15,14 +15,13 @@ const PersonalSection = () => {
             transition={{ duration: 0.6 }}
             className="relative">
             
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-olive/20 via-accent/30 to-olive/20 flex items-center justify-center border border-border">
-              <div className="text-center p-8">
-                <Mountain className="mx-auto mb-4 text-primary" size={48} />
-                <p className="text-muted-foreground text-sm">Personal photo placeholder</p>
-              </div>
-            </div>
+            <img
+              src={profilePhoto}
+              alt="Personal photo"
+              className="aspect-[4/5] rounded-2xl object-cover w-full border border-border"
+            />
             <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent flex items-center justify-center shadow-lg">
-              <TreePine className="text-accent-foreground" size={32} />
+              <Mountain className="text-accent-foreground" size={32} />
             </div>
           </motion.div>
 
