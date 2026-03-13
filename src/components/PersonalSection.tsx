@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mountain, Bike, TreePine } from "lucide-react";
+import { Mountain, Bike, Headphones, Scissors, Bird, BookOpen } from "lucide-react";
 
 const PersonalSection = () => {
   return (
@@ -21,7 +21,7 @@ const PersonalSection = () => {
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent flex items-center justify-center shadow-lg">
-              <TreePine className="text-accent-foreground" size={32} />
+              <Mountain className="text-accent-foreground" size={32} />
             </div>
           </motion.div>
 
@@ -50,11 +50,14 @@ const PersonalSection = () => {
               for solving complex problems, and a commitment to delivering results that matter.
             </p>
 
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-4">
               {[
               { icon: Mountain, label: "Rock Climbing" },
               { icon: Bike, label: "Mountain Biking" },
-              { icon: TreePine, label: "Outdoors" }].
+              { icon: Headphones, label: "Podcasts" },
+              { icon: Scissors, label: "Sewing" },
+              { icon: Bird, label: "Birding" },
+              { icon: BookOpen, label: "Learning" }].
               map((item) =>
               <div key={item.label} className="flex items-center gap-2 text-sm text-muted-foreground">
                   <item.icon size={18} className="text-primary" />
