@@ -3,10 +3,10 @@ import { Building2, Stethoscope, Rocket } from "lucide-react";
 
 const cards = [
 {
-  icon: Building2,
-  title: "Health Systems",
+  icon: Rocket,
+  title: "Startups",
   description:
-  "Streamlining large-scale Medicaid initiatives and ensuring data integrity across complex partner networks."
+  "Building scalable workflows and dashboards to turn customer insights into better products."
 },
 {
   icon: Stethoscope,
@@ -15,10 +15,10 @@ const cards = [
   "Automating billing and claims to reduce errors and improve value-based payment performance."
 },
 {
-  icon: Rocket,
-  title: "Startups",
+  icon: Building2,
+  title: "Health Systems",
   description:
-  "Building scalable workflows and dashboards to turn customer insights into better products."
+  "Streamlining large-scale Medicaid initiatives and ensuring data integrity across complex partner networks."
 }];
 
 
