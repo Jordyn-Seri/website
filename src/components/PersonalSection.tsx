@@ -21,7 +21,7 @@ const PersonalSection = () => {
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent flex items-center justify-center shadow-lg">
-              <TreePine className="text-accent-foreground" size={32} />
+              <Mountain className="text-accent-foreground" size={32} />
             </div>
           </motion.div>
 
