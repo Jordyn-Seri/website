@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mountain, Bike, TreePine } from "lucide-react";
+import { Mountain, Bike, Headphones, Scissors, Bird, BookOpen } from "lucide-react";
 
 const PersonalSection = () => {
   return (
