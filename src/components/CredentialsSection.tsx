@@ -47,7 +47,7 @@ const CredentialsSection = () => {
               {certifications.map((cert) => (
                 <div
                   key={cert.label}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-primary/20 bg-primary/5"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-olive/20 bg-olive/5"
                 >
                   <cert.icon size={18} className="text-primary" />
                   <span className="text-sm font-semibold text-secondary">{cert.label}</span>

@@ -6,8 +6,8 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-background to-primary/10" />
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-background to-olive/10" />
+      <div className="absolute top-20 right-0 w-[500px] h-[500px] rounded-full bg-olive/5 blur-3xl" />
       <div className="absolute bottom-10 left-0 w-[400px] h-[400px] rounded-full bg-accent/20 blur-3xl" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-24">
@@ -17,7 +17,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}>
             
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-sm font-semibold mb-6 tracking-wide text-olive">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-olive/10 text-sm font-semibold mb-6 tracking-wide text-olive">
               Healthcare Project Manager
             </span>
           </motion.div>

@@ -14,7 +14,7 @@ const PersonalSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary/20 via-accent/30 to-olive/20 flex items-center justify-center border border-border">
+            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-olive/20 via-accent/30 to-olive/20 flex items-center justify-center border border-border">
               <div className="text-center p-8">
                 <Mountain className="mx-auto mb-4 text-primary" size={48} />
                 <p className="text-muted-foreground text-sm">Personal photo placeholder</p>
