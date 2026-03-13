@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mountain, Bike, Headphones, Scissors, Bird, BookOpen } from "lucide-react";
+import { Mountain, Bike, TreePine } from "lucide-react";
 
 const PersonalSection = () => {
   return (
@@ -21,7 +21,7 @@ const PersonalSection = () => {
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent flex items-center justify-center shadow-lg">
-              <Mountain className="text-accent-foreground" size={32} />
+              <TreePine className="text-accent-foreground" size={32} />
             </div>
           </motion.div>
 
@@ -38,10 +38,10 @@ const PersonalSection = () => {
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary mt-3 mb-6">
               The Human Behind the Data
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">When I'm not optimizing workflows or building dashboards, you'll find me rock climbing 5.fun level routes, overcoming my fears on a mountain bike, or doing some other adventurous hobby in the beauty of the outdoors. That is, unless I'm whittling down my queue of podcast episodes, working on a sewing project, or identifying a backyard bird. I believe the same discipline, focus, and problem-solving mindset that fuels my love of learning new things is what makes me effective as a project manager.
+            <p className="text-muted-foreground leading-relaxed mb-6">When I'm not optimizing workflows or building dashboards, you'll find me rock climbing 5.fun level routes, overcoming my fears on a mountain bike, or doing some other adventurous hobby in the beauty of the outdoors. That is, unless I'm whittling down my queue of podcast episodes, working on a sewing project, or identifying a backyard bird.
 
 
-
+I believe the same discipline, focus, and problem-solving mindset that fuels my love of learning new things is what makes me effective as a project manager.
 
 
             </p>
@@ -50,14 +50,11 @@ const PersonalSection = () => {
               for solving complex problems, and a commitment to delivering results that matter.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex gap-6">
               {[
               { icon: Mountain, label: "Rock Climbing" },
               { icon: Bike, label: "Mountain Biking" },
-              { icon: Headphones, label: "Podcasts" },
-              { icon: Scissors, label: "Sewing" },
-              { icon: Bird, label: "Birding" },
-              { icon: BookOpen, label: "Learning" }].
+              { icon: TreePine, label: "Outdoors" }].
               map((item) =>
               <div key={item.label} className="flex items-center gap-2 text-sm text-muted-foreground">
                   <item.icon size={18} className="text-primary" />
