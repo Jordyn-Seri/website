@@ -17,7 +17,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}>
             
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-sm font-semibold mb-6 tracking-wide text-olive">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-olive/10 text-sm font-semibold mb-6 tracking-wide text-olive">
               Healthcare Project Manager
             </span>
           </motion.div>
