@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bike, Headphones, Scissors, Bird, BookOpen, FingerprintPattern } from "lucide-react";
+import { Bike, Headphones, Scissors, Bird, BookOpen, Fingerprint, Mountain } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const PersonalSection = () => {
