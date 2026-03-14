@@ -11,7 +11,7 @@ const Footer = () => {
             <p className="text-xl font-bold text-secondary-foreground mb-2">
               Jordyn Seri<span className="text-primary">, PMP</span>
             </p>
-            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/15 text-sm font-semibold text-accent">
+            <div className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-primary-foreground text-olive">
               Currently accepting new clients
             </div>
           </div>
