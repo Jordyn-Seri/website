@@ -1,40 +1,40 @@
 import { motion } from "framer-motion";
 
 const caseStudies = [
-  {
-    tag: "Revenue Automation",
-    problem: "Thousands of manual claims processed by hand each year, draining staff time and increasing error rates.",
-    solution: "Designed an automated system to streamline claims processing end-to-end.",
-    result: "Eliminated 3,500+ manual claims/year, reduced billing errors, increased on-time reimbursement, saved admin time, and improved staff satisfaction.",
-    metric: "3,500+",
-    metricLabel: "claims automated",
-  },
-  {
-    tag: "Medicaid Operations",
-    problem: "Complex Medicaid documentation guidelines made valid claim submission a hassle.",
-    solution: "Built standardized workflows and oversight systems for billing accuracy.",
-    result: "Customer maintained a 98% avg billing success rate compared to the statewide avg of 80%, ensuring receipt of program sustaining payment.",
-    metric: "98%",
-    metricLabel: "billing accuracy",
-  },
-  {
-    tag: "Strategic Dashboards",
-    problem: "Statewide partners lacked visibility into performance data and actionable insights.",
-    solution: "Developed reporting dashboards with engineering team providing real-time, actionable data to stakeholders.",
-    result: "Delivered actionable reporting on 20+ statewide partners to support their operations and the strategic goals of 8 ACOs and 1 MCO.",
-    metric: "20+",
-    metricLabel: "partners served",
-  },
-];
+{
+  tag: "Revenue Automation",
+  problem: "Thousands of manual claims processed by hand each year, draining staff time and increasing error rates.",
+  solution: "Designed an automated system to streamline claims processing end-to-end.",
+  result: "Eliminated 3,500+ manual claims/year, reduced billing errors, increased on-time reimbursement, saved admin time, and improved staff satisfaction.",
+  metric: "3,500+",
+  metricLabel: "claims automated"
+},
+{
+  tag: "Medicaid Operations",
+  problem: "Complex Medicaid documentation guidelines made valid claim submission a hassle.",
+  solution: "Built standardized workflows and oversight systems for billing accuracy.",
+  result: "Customer maintained a 98% avg billing success rate compared to the statewide avg of 80%, ensuring receipt of program sustaining payment.",
+  metric: "98%",
+  metricLabel: "billing accuracy"
+},
+{
+  tag: "Strategic Dashboards",
+  problem: "Statewide partners lacked visibility into performance data and actionable insights.",
+  solution: "Developed reporting dashboards with engineering team providing real-time, actionable data to stakeholders.",
+  result: "Delivered actionable reporting on 20+ statewide partners to support their operations and the strategic goals of 8 ACOs and 1 MCO.",
+  metric: "20+",
+  metricLabel: "partners served"
+}];
+
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.2 } },
+  show: { transition: { staggerChildren: 0.2 } }
 };
 
 const item = {
   hidden: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
 const ImpactSection = () => {
@@ -46,8 +46,8 @@ const ImpactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+          className="text-center mb-16">
+          
           <span className="text-primary font-semibold text-sm tracking-widest uppercase">
             Proven Results
           </span>
@@ -61,14 +61,14 @@ const ImpactSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
-        >
-          {caseStudies.map((cs) => (
-            <motion.div
-              key={cs.tag}
-              variants={item}
-              className="rounded-2xl border border-border bg-card p-8 flex flex-col hover:shadow-lg transition-shadow duration-300"
-            >
+          className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          
+          {caseStudies.map((cs) =>
+          <motion.div
+            key={cs.tag}
+            variants={item}
+            className="rounded-2xl border border-border bg-card p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
+            
               <span className="inline-block self-start px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-bold tracking-wide mb-6">
                 {cs.tag}
               </span>
@@ -89,15 +89,15 @@ const ImpactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-1">Result</p>
-                  <p className="text-sm font-semibold text-secondary leading-relaxed">{cs.result}</p>
+                  <p className="text-sm font-semibold text-secondary leading-relaxed font-sans">{cs.result}</p>
                 </div>
               </div>
             </motion.div>
-          ))}
+          )}
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ImpactSection;
