@@ -48,12 +48,12 @@ const HeroSection = () => {
             className="mt-10 flex flex-wrap gap-4">
             
             <Button asChild size="lg" className="rounded-full px-8 text-base gap-2">
-              <a href="mailto:jordynseri@gmail.com" className="bg-olive">
+              <a href="mailto:jordynseri@gmail.com" className="bg-olive border border-secondary-foreground">
                 Schedule a Consult <ArrowRight size={18} />
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base border-secondary/20">
-              <a href="#impact">See My Impact</a>
+              <a href="#impact" className="bg-primary-foreground border border-secondary">See My Impact</a>
             </Button>
           </motion.div>
         </div>
