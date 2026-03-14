@@ -6,47 +6,47 @@
 
 @layer base {
   :root {
-    --background: 60 20% 97%;
-    --foreground: 204 40% 16%;
+    --background: 220 39% 11%;
+    --foreground: 210 20% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 204 40% 16%;
+    --card: 220 39% 15%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 204 40% 16%;
+    --popover: 220 39% 15%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 68 73% 28%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 84 78% 55%;
+    --primary-foreground: 220 39% 11%;
 
-    --secondary: 204 40% 16%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 173 80% 40%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 270 5% 67%;
-    --muted-foreground: 204 20% 40%;
+    --muted: 220 30% 20%;
+    --muted-foreground: 220 15% 65%;
 
-    --accent: 72 100% 74%;
-    --accent-foreground: 204 40% 16%;
+    --accent: 189 94% 43%;
+    --accent-foreground: 220 39% 11%;
 
-    --olive: 68 73% 28%;
-    --olive-foreground: 0 0% 100%;
+    --olive: 84 78% 55%;
+    --olive-foreground: 220 39% 11%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 270 5% 82%;
-    --input: 270 5% 82%;
-    --ring: 68 73% 28%;
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 84 78% 55%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 39% 13%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 84 78% 55%;
+    --sidebar-primary-foreground: 220 39% 11%;
+    --sidebar-accent: 220 30% 20%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 220 30% 20%;
+    --sidebar-ring: 84 78% 55%;
   }
 
   .dark {
