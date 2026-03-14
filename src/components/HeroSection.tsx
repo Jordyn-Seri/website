@@ -48,7 +48,7 @@ const HeroSection = () => {
             className="mt-10 flex flex-wrap gap-4">
             
             <Button asChild size="lg" className="rounded-full px-8 text-base gap-2">
-              <a href="mailto:jordynseri@gmail.com" className="bg-olive border border-secondary-foreground">
+              <a className="bg-olive border border-secondary-foreground" href="mailto:hello@jordynseri.com">
                 Schedule a Consult <ArrowRight size={18} />
               </a>
             </Button>
