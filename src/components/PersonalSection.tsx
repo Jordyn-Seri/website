@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bike, Headphones, Scissors, Bird, BookOpen, FingerprintPattern } from "lucide-react";
+import { Bike, Headphones, Scissors, Bird, BookOpen, Fingerprint, Mountain } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const PersonalSection = () => {
@@ -21,7 +21,7 @@ const PersonalSection = () => {
               className="aspect-[4/5] rounded-2xl object-cover w-full border border-border" />
             
             <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl flex items-center justify-center shadow-lg bg-secondary">
-              <FingerprintPattern className="text-accent-foreground w-[50px] h-[50px]" size={32} />
+              <Fingerprint className="text-accent-foreground w-[50px] h-[50px]" size={32} />
             </div>
           </motion.div>
 
