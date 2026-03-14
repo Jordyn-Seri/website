@@ -16,9 +16,9 @@ const PersonalSection = () => {
             className="relative">
             
             <img
-              src={profilePhoto}
+
               alt="Personal photo"
-              className="aspect-[4/5] rounded-2xl object-cover w-full border border-border" />
+              className="aspect-[4/5] rounded-2xl w-full border border-border object-scale-down" src="/lovable-uploads/94c544a8-8ba7-43ec-bc31-740af6bd1338.jpg" />
             
             <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl flex items-center justify-center shadow-lg bg-secondary">
               <Fingerprint className="text-accent-foreground w-[50px] h-[50px]" size={32} />
