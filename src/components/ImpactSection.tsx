@@ -89,7 +89,7 @@ const ImpactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-1">Result</p>
-                  <p className="text-sm font-semibold text-secondary leading-relaxed font-sans">{cs.result}</p>
+                  <p className="text-sm text-secondary leading-relaxed font-sans font-normal">{cs.result}</p>
                 </div>
               </div>
             </motion.div>
