@@ -67,7 +67,7 @@ const WhoIHelpSection = () => {
               <div className="w-14 h-14 rounded-xl bg-primary/10 mb-6 group-hover:bg-primary/20 transition-colors items-center justify-center flex flex-row shadow-none border-secondary border-2 border-dotted">
                 <card.icon className="text-primary" size={28} />
               </div>
-              <h3 className="font-bold text-secondary mb-3 text-center text-2xl">{card.title}</h3>
+              <h3 className="font-bold text-secondary mb-3 text-2xl text-left">{card.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{card.description}</p>
             </motion.div>
           )}
