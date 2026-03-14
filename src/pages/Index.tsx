@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import WhoIHelpSection from "@/components/WhoIHelpSection";
 import ImpactSection from "@/components/ImpactSection";
+import ServicesSection from "@/components/ServicesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CredentialsSection from "@/components/CredentialsSection";
 import PersonalSection from "@/components/PersonalSection";
