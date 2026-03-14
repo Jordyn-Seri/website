@@ -64,10 +64,10 @@ const WhoIHelpSection = () => {
             variants={item}
             className="group relative rounded-2xl border border-border bg-background p-8 hover:shadow-xl hover:border-primary/30 transition-all duration-300">
             
-              <div className="w-14 h-14 rounded-xl bg-primary/10 mb-6 group-hover:bg-primary/20 transition-colors flex items-center justify-center shadow-sm">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 mb-6 group-hover:bg-primary/20 transition-colors items-center justify-center flex flex-row shadow-none border-secondary border-2 border-none">
                 <card.icon className="text-primary" size={28} />
               </div>
-              <h3 className="text-xl font-bold text-secondary mb-3 text-center">{card.title}</h3>
+              <h3 className="font-bold text-secondary mb-3 text-center text-2xl">{card.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{card.description}</p>
             </motion.div>
           )}
