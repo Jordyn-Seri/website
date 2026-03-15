@@ -42,7 +42,7 @@ const Navbar = () => {
             </a>
           )}
           <Button asChild size="sm" className="rounded-full px-6">
-            <a href="mailto:jordynseri@gmail.com" className="bg-olive">Schedule a Consult</a>
+            <a className="bg-olive" href="mailto:hello@jordynseri.com">Schedule a Consult</a>
           </Button>
         </div>
 
