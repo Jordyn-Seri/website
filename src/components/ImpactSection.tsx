@@ -10,20 +10,20 @@ const caseStudies = [
   metricLabel: "claims automated"
 },
 {
-  tag: "Medicaid Operations",
-  problem: "Complex Medicaid documentation guidelines made valid claim submission a hassle.",
-  solution: "Built standardized workflows and oversight systems for billing accuracy.",
-  result: "Customer maintained a 98% avg billing success rate compared to the statewide avg of 80%, ensuring receipt of program sustaining payment.",
-  metric: "98%",
-  metricLabel: "billing accuracy"
-},
-{
   tag: "Strategic Dashboards",
   problem: "Statewide partners lacked visibility into performance data and actionable insights.",
   solution: "Developed reporting dashboards with engineering team providing real-time, actionable data to stakeholders.",
   result: "Delivered actionable reporting on 20+ statewide partners to support their operations and the strategic goals of 8 ACOs and 1 MCO.",
   metric: "20+",
   metricLabel: "partners served"
+},
+{
+  tag: "Medicaid Operations",
+  problem: "Complex Medicaid documentation guidelines made valid claim submission a hassle.",
+  solution: "Built standardized workflows and oversight systems for billing accuracy.",
+  result: "Customer maintained a 98% avg billing success rate compared to the statewide avg of 80%, ensuring receipt of program sustaining payment.",
+  metric: "98%",
+  metricLabel: "billing accuracy"
 }];
 
 
