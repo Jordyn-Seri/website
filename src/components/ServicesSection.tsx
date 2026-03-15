@@ -28,13 +28,13 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, x: -20 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.5 } },
 };
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-card">
+    <section id="services" className="py-24 lg:py-32">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,23 +53,25 @@ const ServicesSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+          className="max-w-3xl mx-auto divide-y divide-border"
         >
           {services.map((service) => (
             <motion.div
               key={service.title}
               variants={item}
-              className="group relative rounded-2xl border border-border bg-background p-8 hover:shadow-xl hover:border-primary/30 transition-all duration-300"
+              className="flex items-start gap-6 py-8 first:pt-0 last:pb-0"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 mb-6 group-hover:bg-primary/20 transition-colors flex items-center justify-center">
-                <service.icon className="text-primary" size={28} />
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                <service.icon className="text-primary" size={22} />
               </div>
-              <h3 className="font-bold text-secondary mb-3 text-2xl text-left">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
+              <div>
+                <h3 className="font-bold text-secondary text-xl mb-1">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
