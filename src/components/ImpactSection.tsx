@@ -21,7 +21,7 @@ const caseStudies = [
   tag: "Medicaid Operations",
   problem: "Complex Medicaid documentation guidelines made valid claim submission a hassle.",
   solution: "Built standardized workflows and oversight systems for billing accuracy.",
-  result: "Customer maintained a 98% avg billing success rate compared to the statewide avg of 80%, ensuring receipt of program sustaining payment.",
+  result: "Customer maintained a 94-98% avg billing success rate compared to the statewide avg of 80%, ensuring receipt of program sustaining payment.",
   metric: "98%",
   metricLabel: "billing accuracy"
 }];
