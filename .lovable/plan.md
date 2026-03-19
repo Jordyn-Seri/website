@@ -1,19 +1,21 @@
 
 
-## Add Memberships to Credentials Section
+## Restructure Credentials Section Layout
 
 ### Changes
 
-**Copy 4 uploaded logos to `src/assets/`**:
-- `user-uploads://image.png` → `src/assets/women-applying-ai.png`
-- `user-uploads://image-2.png` → `src/assets/health-tech-nerds.png`
-- `user-uploads://image-3.png` → `src/assets/whcm.png`
-- `user-uploads://image-4.png` → `src/assets/hba.png`
+**Copy PMI logo to `src/assets/`**:
+- `user-uploads://image-5.png` → `src/assets/pmi.png`
 
 **Update `src/components/CredentialsSection.tsx`**:
-- Import all 4 logo images
-- Add a "Memberships" subsection below "Core Skills" in the left column
-- Display as a list of items, each with the org logo (small, ~32px) and name side by side
-- Style similarly to the certifications pills: `flex items-center gap-3`, with logos in small rounded containers and org names as text
-- Use `rounded-full overflow-hidden` on logo containers for consistent presentation
+
+1. **Add PMI to memberships array** with name "Project Management Institute" and the new logo
+
+2. **Restructure the two-column layout**:
+   - **Left column**: Certifications + Memberships (5 orgs now)
+   - **Right column**: Featured Video + Core Skills (moved from left)
+
+3. **Fix logo styling**: Use `object-contain` instead of `object-cover`, and `rounded-lg` instead of `rounded-full` so logos display fully without cropping
+
+This balances the columns and keeps related credential items (certs + memberships) together on the left, with the video and skills on the right.
 
