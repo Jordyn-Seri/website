@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { Award, BarChart3, Calendar, Zap } from "lucide-react";
+import womenApplyingAiLogo from "@/assets/women-applying-ai.png";
+import healthTechNerdsLogo from "@/assets/health-tech-nerds.png";
+import whcmLogo from "@/assets/whcm.png";
+import hbaLogo from "@/assets/hba.png";
 
 const certifications = [
 { label: "PMP", icon: Award },
 { label: "Monday.com Training Certificate", icon: Calendar }];
-
 
 const skills = [
 "AI Automation & Strategy",
@@ -13,6 +16,13 @@ const skills = [
 "Dashboard Building",
 "Stakeholder Management",
 "Data Systems Design"];
+
+const memberships = [
+{ name: "Women Applying AI", logo: womenApplyingAiLogo },
+{ name: "Health Tech Nerds", logo: healthTechNerdsLogo },
+{ name: "Women in Health Care Management", logo: whcmLogo },
+{ name: "Healthcare Businesswomen's Association", logo: hbaLogo },
+];
 
 
 const CredentialsSection = () => {
