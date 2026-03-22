@@ -1,45 +1,51 @@
+## Redesign "Healthcare from Every Angle" as a Zoom-Level Journey
 
+Replace the generic radial node diagram with a **vertical "zoom lens" visual** — a layered depth chart that tells a story of moving from the closest, most personal level of healthcare (the patient) outward to the biggest systemic view, with side-steps for the operator and startup perspectives. This makes the spatial metaphor of "zoomed in vs. zoomed out" literal and personal.
 
-## Add "Healthcare from Every Angle" Section
+### Concept: "The Depth of My Experience"
 
-### Placement
-Between **Who I Help** and **What I Offer** (Services). This positions the experience map early — establishing credibility before diving into services and case studies.
+A vertical visual journey with 3 depth layers plus 2 lateral perspectives, arranged like a lens/telescope diagram:
 
-**New order**: Hero → Who I Help → **Healthcare from Every Angle** → What I Offer → Case Studies → Testimonials → Credentials → Personal → Footer
+```text
+  ┌─────────────────────────────────────┐
+  │    🔍  ZOOMED IN                    │
+  │    ❤️  The Patient's World          │  ← closest to the ground
+  │    🔍  The Consultant's View        │  ← clinic-level
+  ├─────────────────────────────────────┤
+  │    📊  SIDE VIEW                    │
+  │    ⚙️  The Operator's Lens          │  ← the machinery behind it
+  │    🚀  The Startup Seat             │  ← building it from scratch
+  ├─────────────────────────────────────┤
+  │    🌐  ZOOMED OUT                   │
+  │    🔗  The Systems View             │  ← statewide / network level
+  └─────────────────────────────────────┘
+```
 
-### Design: Radial/Honeycomb Experience Map
+### Design
 
-A visually bold **pentagon/radial layout** on desktop — five nodes arranged in a circle around a central label ("5 Vantage Points"), connected by subtle lines. Each node is an icon + title that **expands on click/hover** to reveal bullet points via an animated panel. On mobile, degrades to **stacked expandable cards**.
+**Desktop layout**: A tall, narrow visual (centered, max-w-3xl) with three labeled "zones" stacked vertically:
 
-This is visually distinct from every other section (no cards grid, no list, no timeline).
+1. **"Zoomed In"** zone (top) — two cards side by side: Patient's World + Consultant's View. Framed with a label like "Up close — where care happens"
+2. **"Behind the Scenes"** zone (middle) — two cards: Operator's Lens + Startup Seat. Label: "The machinery — how it runs and gets built"
+3. **"Zoomed Out"** zone (bottom) — one full-width card: Systems View. Label: "The big picture — networks, plans, policy"
 
-### New file: `src/components/ExperienceMapSection.tsx`
+Between zones, a vertical connecting line with a subtle gradient (primary → secondary → accent) to show the journey from micro to macro.
 
-**Data** — Five vantage points:
+Each card: icon + title always visible, bullet points revealed on hover/click with framer-motion. Cards use distinct border colors per zone.
 
-1. **The Consultant's View** — Icon: `Search` — "Identifying inefficiencies and their solutions for healthcare clinics"
-2. **The Patient's World** — Icon: `Heart` — Two bullets: "Hands-on care navigation for Medicaid patients..." and "Coordinating with providers..."
-3. **The Operator's Lens** — Icon: `BarChart3` — "Data systems, billing, and operations"
-4. **The Systems View** — Icon: `Network` — Two bullets: "Health plan & statewide medicaid program network oversight" and "ACOs, MCOs, and community org coordination"
-5. **The Startup Seat** — Icon: `Rocket` — Two bullets: "Connecting clinical workflows to technology" and "Building from the ground up"
+**Header copy updated**: "Healthcare from Every Angle" as heading, with subtext: "I've been the patient advocate, the operator, and the strategist. That's why I know where things break — and how to put them back together."
 
-**Desktop layout** (lg+):
-- Section bg: `bg-card` to alternate with surrounding sections
-- Intro text: "Five vantage points. One through line: making healthcare work better."
-- Central area: 5 nodes positioned in a circle using absolute positioning within a relative container (~500px square)
-- Each node: icon in a colored circle + label below, connected to center with subtle SVG lines
-- On hover: node scales up slightly, a tooltip/panel appears with bullet points (framer-motion AnimatePresence)
-- Center: a small label or decorative element
-- Closing text below: "That range is why I can spot what's broken, talk to whoever's in the room, and actually fix it."
+**Mobile**: Same vertical stack, simplified — each zone label + cards collapse naturally. Cards are accordion-style tap-to-expand.
 
-**Mobile layout** (below lg):
-- Stacked cards, each with icon + title; tap to expand/collapse bullet points (accordion-style with framer-motion)
+### File Changes
 
-**Styling**: Uses `primary` (lime) for active/hovered nodes, `secondary` (teal) and `accent` (cyan) for variety across nodes, `border` for connection lines.
+`**src/components/ExperienceMapSection.tsx**` — Full rewrite:
 
-### Update: `src/pages/Index.tsx`
-Import and place `ExperienceMapSection` between `WhoIHelpSection` and `ServicesSection`.
+- Restructure data into 3 zones (zoomedIn, behindTheScenes, zoomedOut)
+- Each zone has a label, subtitle, and array of vantage points
+- Desktop: zones stacked vertically with connecting gradient line (SVG or border-left), cards in flex rows within each zone
+- Each card shows icon + title always, bullets expand on hover (desktop) / tap (mobile)
+- Zone labels styled as small uppercase badges on the left margin
+- Closing quote remains at the bottom
 
-### Update: `src/components/Navbar.tsx`
-Add `{ label: "Experience", href: "#experience" }` after "Who I Help" in navLinks.
-
+No changes needed to Index.tsx or Navbar.tsx (same component, same id).
