@@ -12,13 +12,13 @@ const cards = [
   icon: Stethoscope,
   title: "Clinics",
   description:
-  "Automating billing and claims to reduce errors and improve value-based payment performance."
+  "Plan and implement automations for EHR documentation to reduce errors and improve value-based payment performance."
 },
 {
   icon: Building2,
   title: "Health Systems",
   description:
-  "Streamlining large-scale Medicaid initiatives and ensuring data integrity across complex partner networks."
+  "Collaborate with your engineers and IT to streamline processes across complex partner networks."
 }];
 
 
