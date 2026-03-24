@@ -75,6 +75,29 @@ const ServicesSection = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="max-w-3xl mx-auto mt-16 text-center"
+        >
+          <p className="text-muted-foreground leading-relaxed text-lg">
+            For all of my services, working together follows the same proven approach:
+          </p>
+          <div className="flex items-center justify-center gap-3 mt-4 mb-6">
+            {["Assess", "Strategize", "Implement"].map((step, i) => (
+              <div key={step} className="flex items-center gap-3">
+                <span className="font-bold text-primary text-xl">{step}</span>
+                {i < 2 && <span className="text-muted-foreground text-xl">→</span>}
+              </div>
+            ))}
+          </div>
+          <p className="text-muted-foreground leading-relaxed">
+            I'll work with you to audit your current processes and pain points, propose potential solutions, and then collaborate with your existing teams to deliver a result that will have you thinking, <span className="italic text-secondary font-medium">"I wish we did this sooner."</span>
+          </p>
+        </motion.div>
       </div>
     </section>
   );
