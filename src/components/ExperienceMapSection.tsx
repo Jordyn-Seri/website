@@ -40,10 +40,10 @@ const nodes: Node[] = [
   },
   {
     icon: Globe,
-    title: "Statewide Systems & Networks",
+    title: "Statewide Systems & Network Management",
     levelLabel: "The Big Picture",
     context:
-      "High-level oversight. Managing MCO/ACO networks and statewide Medicaid program coordination.",
+      "Overseeing program deliver of 20 community organizations for 8 ACO networks within a statewide Medicaid program.",
   },
 ];
 
