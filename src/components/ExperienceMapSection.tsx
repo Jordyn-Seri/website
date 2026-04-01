@@ -15,7 +15,7 @@ const nodes: Node[] = [
     title: "Front-Line Care Navigation",
     levelLabel: "The Personal",
     context:
-      "My background in direct patient navigation for Medicaid. Navigating care in shelters and clinics in collaboration with clinicians to drive holistic outcomes.",
+      "Background in boots-on-the-ground healthcare navigation for Medicaid patients. Collaboration with clinicians to drive holistic outcomes.",
   },
   {
     icon: Building2,
