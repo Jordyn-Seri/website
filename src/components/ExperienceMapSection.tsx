@@ -36,7 +36,7 @@ const nodes: Node[] = [
     title: "Clinical Strategy",
     levelLabel: "The Architect",
     context:
-      "My work as a consultant. Identifying clinic-level inefficiencies and architecting practical solutions.",
+      "Consulting to identify clinic-level inefficiencies and advising on practical solutions.",
   },
   {
     icon: Globe,
