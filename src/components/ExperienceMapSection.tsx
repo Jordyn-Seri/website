@@ -15,7 +15,7 @@ const nodes: Node[] = [
     title: "Front-Line Care Navigation",
     levelLabel: "The Personal",
     context:
-      "My background in direct patient navigation for Medicaid. Navigating care in shelters and clinics in collaboration with clinicians to drive holistic outcomes.",
+      "Background in boots-on-the-ground healthcare navigation for Medicaid patients. Collaboration with clinicians to drive holistic outcomes.",
   },
   {
     icon: Building2,
@@ -36,14 +36,14 @@ const nodes: Node[] = [
     title: "Clinical Strategy",
     levelLabel: "The Architect",
     context:
-      "My work as a consultant. Identifying clinic-level inefficiencies and architecting practical solutions.",
+      "Consulting to identify clinic-level inefficiencies and advising on practical solutions.",
   },
   {
     icon: Globe,
-    title: "Statewide Systems & Networks",
+    title: "Statewide Systems & Network Management",
     levelLabel: "The Big Picture",
     context:
-      "High-level oversight. Managing MCO/ACO networks and statewide Medicaid program coordination.",
+      "Overseeing program deliver of 20 community organizations for 8 ACO networks within a statewide Medicaid program.",
   },
 ];
 
