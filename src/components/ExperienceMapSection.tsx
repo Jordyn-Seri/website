@@ -252,8 +252,7 @@ const ExperienceMapSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center text-muted-foreground mt-14 max-w-2xl mx-auto italic"
         >
-          This range is why I can spot what's broken, talk to whoever's in the
-          room, and actually fix it.
+          This range is why I can spot what's broken. And actually fix it.
         </motion.p>
       </div>
     </section>
