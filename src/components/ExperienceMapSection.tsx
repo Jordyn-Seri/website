@@ -1,161 +1,225 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, Heart, BarChart3, Network, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
+import { Search, Building2, Cable, Crosshair, Globe } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-interface VantagePoint {
+interface Node {
   icon: LucideIcon;
   title: string;
-  bullets: string[];
+  levelLabel: string;
+  context: string;
 }
 
-interface Zone {
-  label: string;
-  subtitle: string;
-  color: "primary" | "secondary" | "accent";
-  points: VantagePoint[];
-}
-
-const zones: Zone[] = [
+const nodes: Node[] = [
   {
-    label: "Zoomed In",
-    subtitle: "Up close — where care happens",
-    color: "primary",
-    points: [
-      {
-        icon: Heart,
-        title: "The Patient's World",
-        bullets: [
-          "Hands-on care navigation for Medicaid patients, meeting them where they are — shelters, clinics, community",
-          "Coordinating with providers to holistically achieve healthier patient outcomes",
-        ],
-      },
-      {
-        icon: Search,
-        title: "The Consultant's View",
-        bullets: [
-          "Identifying inefficiencies and their solutions for healthcare clinics",
-        ],
-      },
-    ],
+    icon: Search,
+    title: "Front-Line Care Navigation",
+    levelLabel: "Level 1 · The Personal",
+    context:
+      "My background in direct patient navigation for Medicaid. Navigating care in shelters and clinics in collaboration with clinicians to drive holistic outcomes.",
   },
   {
-    label: "Behind the Scenes",
-    subtitle: "The machinery — how it runs and gets built",
-    color: "secondary",
-    points: [
-      {
-        icon: BarChart3,
-        title: "The Operator's Lens",
-        bullets: ["Data systems, billing, and operations"],
-      },
-      {
-        icon: Rocket,
-        title: "The Startup Seat",
-        bullets: [
-          "Connecting clinical workflows to technology",
-          "Building from the ground up",
-        ],
-      },
-    ],
+    icon: Building2,
+    title: "Operations & Data Management",
+    levelLabel: "Level 2 · The Machinery",
+    context:
+      "My time \"under the hood\" of healthcare. Managing billing systems, data workflows, and daily clinical operations.",
   },
   {
-    label: "Zoomed Out",
-    subtitle: "The big picture — networks, plans, policy",
-    color: "accent",
-    points: [
-      {
-        icon: Network,
-        title: "The Systems View",
-        bullets: [
-          "Health plan & statewide medicaid program network oversight",
-          "ACOs, MCOs, and community org coordination",
-        ],
-      },
-    ],
+    icon: Cable,
+    title: "The Technical-Clinical Bridge",
+    levelLabel: "Level 3 · The Connector",
+    context:
+      "Working with startups and clinics to integrate technology into existing clinical workflows. Building solutions from the ground up.",
+  },
+  {
+    icon: Crosshair,
+    title: "Clinical Strategy",
+    levelLabel: "Level 4 · The Architect",
+    context:
+      "My work as a consultant. Identifying clinic-level inefficiencies and architecting practical solutions.",
+  },
+  {
+    icon: Globe,
+    title: "Statewide Systems & Networks",
+    levelLabel: "Level 5 · The Big Picture",
+    context:
+      "High-level oversight. Managing MCO/ACO networks and statewide Medicaid program coordination.",
   },
 ];
 
-const colorStyles = {
-  primary: {
-    badge: "bg-primary/15 text-primary border-primary/30",
-    card: "border-primary/25 hover:border-primary/50",
-    icon: "bg-primary/15 text-primary",
-    line: "from-primary/60",
-  },
-  secondary: {
-    badge: "bg-secondary/15 text-secondary border-secondary/30",
-    card: "border-secondary/25 hover:border-secondary/50",
-    icon: "bg-secondary/15 text-secondary",
-    line: "via-secondary/60",
-  },
-  accent: {
-    badge: "bg-accent/15 text-accent border-accent/30",
-    card: "border-accent/25 hover:border-accent/50",
-    icon: "bg-accent/15 text-accent",
-    line: "to-accent/60",
-  },
-};
+// Colors for each segment between nodes (and node accent)
+const nodeColors = [
+  "hsl(var(--primary))",
+  "hsl(var(--primary))",
+  "hsl(var(--secondary))",
+  "hsl(var(--secondary))",
+  "hsl(var(--accent))",
+];
 
-const ExpandableCard = ({
-  point,
-  color,
-  index,
-}: {
-  point: VantagePoint;
-  color: "primary" | "secondary" | "accent";
-  index: number;
-}) => {
-  const [expanded, setExpanded] = useState(false);
-  const styles = colorStyles[color];
+const nodeColorClasses = [
+  { icon: "bg-primary/15 text-primary", label: "text-primary" },
+  { icon: "bg-primary/15 text-primary", label: "text-primary" },
+  { icon: "bg-secondary/15 text-secondary", label: "text-secondary" },
+  { icon: "bg-secondary/15 text-secondary", label: "text-secondary" },
+  { icon: "bg-accent/15 text-accent", label: "text-accent" },
+];
+
+// Desktop diagonal positions (percentage-based within the SVG viewBox)
+const diagonalPositions = [
+  { x: 120, y: 520 },
+  { x: 300, y: 410 },
+  { x: 480, y: 300 },
+  { x: 660, y: 190 },
+  { x: 840, y: 80 },
+];
+
+const DesktopDiagram = () => {
+  const svgWidth = 960;
+  const svgHeight = 600;
+  const circleR = 26;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-      className={`flex-1 min-w-0 rounded-xl border ${styles.card} bg-background/60 backdrop-blur-sm transition-all duration-300 cursor-pointer`}
-      onMouseEnter={() => setExpanded(true)}
-      onMouseLeave={() => setExpanded(false)}
-      onClick={() => setExpanded(!expanded)}
-    >
-      <div className="p-5 flex items-start gap-4">
-        <div
-          className={`w-11 h-11 rounded-lg ${styles.icon} flex items-center justify-center flex-shrink-0`}
-        >
-          <point.icon size={22} />
-        </div>
-        <div className="min-w-0">
-          <h4 className="font-semibold text-foreground text-sm leading-tight">
-            {point.title}
-          </h4>
-          <AnimatePresence>
-            {expanded && (
-              <motion.ul
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="mt-3 space-y-2 overflow-hidden"
+    <div className="hidden lg:block relative max-w-5xl mx-auto">
+      <svg
+        viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+        className="w-full h-auto"
+        fill="none"
+      >
+        {/* Connector lines */}
+        {diagonalPositions.slice(0, -1).map((pos, i) => {
+          const next = diagonalPositions[i + 1];
+          return (
+            <line
+              key={i}
+              x1={pos.x}
+              y1={pos.y}
+              x2={next.x}
+              y2={next.y}
+              stroke={nodeColors[i]}
+              strokeWidth={2.5}
+              strokeLinecap="round"
+              opacity={0.45}
+            />
+          );
+        })}
+
+        {/* Node circles */}
+        {diagonalPositions.map((pos, i) => (
+          <circle
+            key={i}
+            cx={pos.x}
+            cy={pos.y}
+            r={circleR}
+            fill={nodeColors[i]}
+            opacity={0.15}
+            stroke={nodeColors[i]}
+            strokeWidth={2}
+          />
+        ))}
+      </svg>
+
+      {/* Overlay: icons + text cards positioned absolutely */}
+      <div className="absolute inset-0">
+        {diagonalPositions.map((pos, i) => {
+          const node = nodes[i];
+          const colors = nodeColorClasses[i];
+          // Convert SVG coords to percentages
+          const leftPct = (pos.x / svgWidth) * 100;
+          const topPct = (pos.y / svgHeight) * 100;
+          // Alternate text placement: odd nodes text goes right+below, even nodes text goes left+above
+          const textRight = i % 2 === 0;
+
+          return (
+            <motion.div
+              key={node.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              className="absolute"
+              style={{
+                left: `${leftPct}%`,
+                top: `${topPct}%`,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              {/* Icon circle */}
+              <div
+                className={`w-12 h-12 rounded-full ${colors.icon} flex items-center justify-center mx-auto`}
               >
-                {point.bullets.map((b, j) => (
-                  <li
-                    key={j}
-                    className="text-sm text-muted-foreground leading-relaxed flex gap-2"
-                  >
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-muted-foreground/40 flex-shrink-0" />
-                    {b}
-                  </li>
-                ))}
-              </motion.ul>
-            )}
-          </AnimatePresence>
-        </div>
+                <node.icon size={22} />
+              </div>
+
+              {/* Text card */}
+              <div
+                className={`absolute w-52 ${
+                  textRight ? "left-16 -top-3" : "right-16 -top-3"
+                }`}
+              >
+                <span
+                  className={`text-[10px] font-bold uppercase tracking-widest ${colors.label} block mb-1`}
+                >
+                  {node.levelLabel}
+                </span>
+                <h4 className="font-semibold text-foreground text-sm leading-tight mb-1">
+                  {node.title}
+                </h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {node.context}
+                </p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
-    </motion.div>
+    </div>
   );
 };
+
+const MobileTimeline = () => (
+  <div className="lg:hidden relative max-w-md mx-auto pl-10">
+    {/* Vertical gradient line */}
+    <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
+
+    <div className="space-y-10">
+      {nodes.map((node, i) => {
+        const colors = nodeColorClasses[i];
+        return (
+          <motion.div
+            key={node.title}
+            initial={{ opacity: 0, x: -12 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            className="relative"
+          >
+            {/* Circle on the line */}
+            <div
+              className={`absolute -left-10 top-0 w-10 h-10 rounded-full ${colors.icon} flex items-center justify-center`}
+              style={{ transform: "translateX(-50%)" }}
+            >
+              <node.icon size={18} />
+            </div>
+
+            <div className="ml-2">
+              <span
+                className={`text-[10px] font-bold uppercase tracking-widest ${colors.label} block mb-1`}
+              >
+                {node.levelLabel}
+              </span>
+              <h4 className="font-semibold text-foreground text-sm leading-tight mb-1">
+                {node.title}
+              </h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {node.context}
+              </p>
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  </div>
+);
 
 const ExperienceMapSection = () => {
   return (
@@ -178,53 +242,8 @@ const ExperienceMapSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto relative">
-          {/* Vertical gradient line */}
-          <div className="absolute left-6 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-secondary/40 to-accent/40 hidden lg:block" />
-
-          <div className="space-y-12">
-            {zones.map((zone, zi) => {
-              const styles = colorStyles[zone.color];
-              return (
-                <motion.div
-                  key={zone.label}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: zi * 0.15 }}
-                >
-                  {/* Zone label */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <span
-                      className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border ${styles.badge}`}
-                    >
-                      {zone.label}
-                    </span>
-                    <span className="text-sm text-muted-foreground italic">
-                      {zone.subtitle}
-                    </span>
-                  </div>
-
-                  {/* Cards */}
-                  <div
-                    className={`flex flex-col ${
-                      zone.points.length > 1 ? "lg:flex-row" : ""
-                    } gap-4`}
-                  >
-                    {zone.points.map((point, pi) => (
-                      <ExpandableCard
-                        key={point.title}
-                        point={point}
-                        color={zone.color}
-                        index={zi * 2 + pi}
-                      />
-                    ))}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
+        <DesktopDiagram />
+        <MobileTimeline />
 
         <motion.p
           initial={{ opacity: 0 }}
@@ -233,7 +252,7 @@ const ExperienceMapSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center text-muted-foreground mt-14 max-w-2xl mx-auto italic"
         >
-          That range is why I can spot what's broken, talk to whoever's in the
+          This range is why I can spot what's broken, talk to whoever's in the
           room, and actually fix it.
         </motion.p>
       </div>
