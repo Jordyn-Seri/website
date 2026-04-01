@@ -13,35 +13,35 @@ const nodes: Node[] = [
   {
     icon: Search,
     title: "Front-Line Care Navigation",
-    levelLabel: "Level 1 · The Personal",
+    levelLabel: "The Personal",
     context:
       "My background in direct patient navigation for Medicaid. Navigating care in shelters and clinics in collaboration with clinicians to drive holistic outcomes.",
   },
   {
     icon: Building2,
     title: "Operations & Data Management",
-    levelLabel: "Level 2 · The Machinery",
+    levelLabel: "The Machinery",
     context:
       "My time \"under the hood\" of healthcare. Managing billing systems, data workflows, and daily clinical operations.",
   },
   {
     icon: Cable,
     title: "The Technical-Clinical Bridge",
-    levelLabel: "Level 3 · The Connector",
+    levelLabel: "The Connector",
     context:
       "Working with startups and clinics to integrate technology into existing clinical workflows. Building solutions from the ground up.",
   },
   {
     icon: Crosshair,
     title: "Clinical Strategy",
-    levelLabel: "Level 4 · The Architect",
+    levelLabel: "The Architect",
     context:
       "My work as a consultant. Identifying clinic-level inefficiencies and architecting practical solutions.",
   },
   {
     icon: Globe,
     title: "Statewide Systems & Networks",
-    levelLabel: "Level 5 · The Big Picture",
+    levelLabel: "The Big Picture",
     context:
       "High-level oversight. Managing MCO/ACO networks and statewide Medicaid program coordination.",
   },
