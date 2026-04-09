@@ -5,7 +5,6 @@ import type { LucideIcon } from "lucide-react";
 interface Node {
   icon: LucideIcon;
   title: string;
-  levelLabel: string;
   context: string;
 }
 
@@ -13,168 +12,109 @@ const nodes: Node[] = [
   {
     icon: Search,
     title: "Front-Line Care Navigation",
-    levelLabel: "The Personal",
     context:
-      "Background in boots-on-the-ground healthcare navigation for Medicaid patients. Collaboration with clinicians to drive holistic outcomes.",
+      "Background in direct patient navigation for Medicaid. Navigating care in shelters and clinics in collaboration with clinicians to drive holistic outcomes.",
   },
   {
     icon: Building2,
     title: "Operations & Data Management",
-    levelLabel: "The Machinery",
     context:
-      "My time \"under the hood\" of healthcare. Managing billing systems, data workflows, and daily clinical operations.",
+      'My time "under the hood" of healthcare, managing billing systems, data workflows, and daily departmental operations.',
   },
   {
     icon: Cable,
     title: "The Technical-Clinical Bridge",
-    levelLabel: "The Connector",
     context:
-      "Working with startups and clinics to integrate technology into existing clinical workflows. Building solutions from the ground up.",
+      "Working with startups and clinics to integrate technology into existing clinical workflows.",
   },
   {
     icon: Crosshair,
     title: "Clinical Strategy",
-    levelLabel: "The Architect",
     context:
-      "Consulting to identify clinic-level inefficiencies and advising on practical solutions.",
+      "My work as a consultant identifying clinic-level inefficiencies and architecting practical solutions.",
   },
   {
     icon: Globe,
     title: "Statewide Systems & Network Management",
-    levelLabel: "The Big Picture",
     context:
-      "Overseeing program deliver of 20 community organizations for 8 ACO networks within a statewide Medicaid program.",
+      "High-level oversight in managing ACO networks and statewide Medicaid program coordination.",
   },
 ];
 
-// Colors for each segment between nodes (and node accent)
-const nodeColors = [
-  "hsl(var(--primary))",
-  "hsl(var(--primary))",
-  "hsl(var(--secondary))",
-  "hsl(var(--secondary))",
-  "hsl(var(--accent))",
-];
-
 const nodeColorClasses = [
-  { icon: "bg-primary/15 text-primary", label: "text-primary" },
-  { icon: "bg-primary/15 text-primary", label: "text-primary" },
-  { icon: "bg-secondary/15 text-secondary", label: "text-secondary" },
-  { icon: "bg-secondary/15 text-secondary", label: "text-secondary" },
-  { icon: "bg-accent/15 text-accent", label: "text-accent" },
+  { icon: "bg-primary/15 text-primary", stub: "bg-primary/40" },
+  { icon: "bg-primary/15 text-primary", stub: "bg-primary/40" },
+  { icon: "bg-secondary/15 text-secondary", stub: "bg-secondary/40" },
+  { icon: "bg-secondary/15 text-secondary", stub: "bg-secondary/40" },
+  { icon: "bg-accent/15 text-accent", stub: "bg-accent/40" },
 ];
 
-// Desktop diagonal positions (percentage-based within the SVG viewBox)
-const diagonalPositions = [
-  { x: 120, y: 520 },
-  { x: 300, y: 410 },
-  { x: 480, y: 300 },
-  { x: 660, y: 190 },
-  { x: 840, y: 80 },
-];
+const DesktopTimeline = () => (
+  <div className="hidden lg:block relative max-w-4xl mx-auto">
+    {/* Centered vertical gradient line */}
+    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
 
-const DesktopDiagram = () => {
-  const svgWidth = 960;
-  const svgHeight = 600;
-  const circleR = 26;
+    <div className="space-y-16 py-4">
+      {nodes.map((node, i) => {
+        const colors = nodeColorClasses[i];
+        const isLeft = i % 2 === 0; // odd nodes (1,3,5) text left; even (2,4) text right
 
-  return (
-    <div className="hidden lg:block relative max-w-5xl mx-auto">
-      <svg
-        viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-        className="w-full h-auto"
-        fill="none"
-      >
-        {/* Connector lines */}
-        {diagonalPositions.slice(0, -1).map((pos, i) => {
-          const next = diagonalPositions[i + 1];
-          return (
-            <line
-              key={i}
-              x1={pos.x}
-              y1={pos.y}
-              x2={next.x}
-              y2={next.y}
-              stroke={nodeColors[i]}
-              strokeWidth={2.5}
-              strokeLinecap="round"
-              opacity={0.45}
-            />
-          );
-        })}
-
-        {/* Node circles */}
-        {diagonalPositions.map((pos, i) => (
-          <circle
-            key={i}
-            cx={pos.x}
-            cy={pos.y}
-            r={circleR}
-            fill={nodeColors[i]}
-            opacity={0.15}
-            stroke={nodeColors[i]}
-            strokeWidth={2}
-          />
-        ))}
-      </svg>
-
-      {/* Overlay: icons + text cards positioned absolutely */}
-      <div className="absolute inset-0">
-        {diagonalPositions.map((pos, i) => {
-          const node = nodes[i];
-          const colors = nodeColorClasses[i];
-          // Convert SVG coords to percentages
-          const leftPct = (pos.x / svgWidth) * 100;
-          const topPct = (pos.y / svgHeight) * 100;
-          // Alternate text placement: odd nodes text goes right+below, even nodes text goes left+above
-          const textRight = i % 2 === 0;
-
-          return (
-            <motion.div
-              key={node.title}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
-              className="absolute"
-              style={{
-                left: `${leftPct}%`,
-                top: `${topPct}%`,
-                transform: "translate(-50%, -50%)",
-              }}
-            >
-              {/* Icon circle */}
-              <div
-                className={`w-12 h-12 rounded-full ${colors.icon} flex items-center justify-center mx-auto`}
-              >
-                <node.icon size={22} />
-              </div>
-
-              {/* Text card */}
-              <div
-                className={`absolute w-52 ${
-                  textRight ? "left-16 -top-3" : "right-16 -top-3"
-                }`}
-              >
-                <span
-                  className={`text-[10px] font-bold uppercase tracking-widest ${colors.label} block mb-1`}
-                >
-                  {node.levelLabel}
-                </span>
-                <h4 className="font-semibold text-foreground text-sm leading-tight mb-1">
+        return (
+          <motion.div
+            key={node.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="relative flex items-center"
+          >
+            {/* Left text card */}
+            {isLeft ? (
+              <div className="w-[calc(50%-2rem)] pr-6 text-right">
+                <h4 className="font-semibold text-foreground text-base mb-1">
                   {node.title}
                 </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {node.context}
                 </p>
               </div>
-            </motion.div>
-          );
-        })}
-      </div>
+            ) : (
+              <div className="w-[calc(50%-2rem)]" />
+            )}
+
+            {/* Center: stub + icon circle + stub */}
+            <div className="flex items-center justify-center w-16 relative">
+              {/* Left stub */}
+              <div className={`absolute right-[calc(50%+1.75rem)] h-0.5 w-6 ${colors.stub}`} />
+              {/* Icon circle */}
+              <div
+                className={`w-14 h-14 rounded-full ${colors.icon} flex items-center justify-center z-10 shrink-0`}
+              >
+                <node.icon size={24} />
+              </div>
+              {/* Right stub */}
+              <div className={`absolute left-[calc(50%+1.75rem)] h-0.5 w-6 ${colors.stub}`} />
+            </div>
+
+            {/* Right text card */}
+            {!isLeft ? (
+              <div className="w-[calc(50%-2rem)] pl-6">
+                <h4 className="font-semibold text-foreground text-base mb-1">
+                  {node.title}
+                </h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {node.context}
+                </p>
+              </div>
+            ) : (
+              <div className="w-[calc(50%-2rem)]" />
+            )}
+          </motion.div>
+        );
+      })}
     </div>
-  );
-};
+  </div>
+);
 
 const MobileTimeline = () => (
   <div className="lg:hidden relative max-w-md mx-auto pl-10">
@@ -193,7 +133,6 @@ const MobileTimeline = () => (
             transition={{ duration: 0.4, delay: i * 0.1 }}
             className="relative"
           >
-            {/* Circle on the line */}
             <div
               className={`absolute -left-10 top-0 w-10 h-10 rounded-full ${colors.icon} flex items-center justify-center`}
               style={{ transform: "translateX(-50%)" }}
@@ -202,11 +141,6 @@ const MobileTimeline = () => (
             </div>
 
             <div className="ml-2">
-              <span
-                className={`text-[10px] font-bold uppercase tracking-widest ${colors.label} block mb-1`}
-              >
-                {node.levelLabel}
-              </span>
               <h4 className="font-semibold text-foreground text-sm leading-tight mb-1">
                 {node.title}
               </h4>
@@ -221,42 +155,40 @@ const MobileTimeline = () => (
   </div>
 );
 
-const ExperienceMapSection = () => {
-  return (
-    <section id="experience" className="py-24 lg:py-32 bg-card">
-      <div className="container mx-auto px-4 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
-            Healthcare from Every Angle
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            I've been the patient advocate, the operator, and the strategist.
-            That's why I know where things break — and how to put them back
-            together.
-          </p>
-        </motion.div>
+const ExperienceMapSection = () => (
+  <section id="experience" className="py-24 lg:py-32 bg-card">
+    <div className="container mx-auto px-4 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+          Healthcare from Every Angle
+        </h2>
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          I've been the patient advocate, the operator, and the strategist.
+          That's why I know where things break — and how to put them back
+          together.
+        </p>
+      </motion.div>
 
-        <DesktopDiagram />
-        <MobileTimeline />
+      <DesktopTimeline />
+      <MobileTimeline />
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center text-muted-foreground mt-14 max-w-2xl mx-auto italic"
-        >
-          This range is why I can spot what's broken. And actually fix it.
-        </motion.p>
-      </div>
-    </section>
-  );
-};
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="text-center text-muted-foreground mt-14 max-w-2xl mx-auto italic"
+      >
+        This range is why I can spot what's broken. And actually help you fix it.
+      </motion.p>
+    </div>
+  </section>
+);
 
 export default ExperienceMapSection;
