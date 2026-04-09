@@ -3,12 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
-{
-  quote:
-  "Jordyn transformed our operations — what used to take weeks now happens automatically. Her project management skills are unmatched.",
-  name: "Boutique Consulting Firm CO",
-  role: "Executive Partner"
-},
+  {
+    quote: "Jordyn has an exceptional ability to manage details without losing sight of the broader objectives. She consistently anticipated potential challenges and proposed solutions well before risks became apparent to others.\n\nIn addition to being conscientious, diligent, hardworking, and highly intelligent, Jordyn is a genuine pleasure to work with. I would not hesitate to hire her again and would do so enthusiastically given the opportunity.",
+    name: "Charles Moore",
+    role: "CEO (Retired), HealthMETRICS Partners"
+  },
 {
   quote:
   "Working with Jordyn on our Medicaid program was a game-changer. She brought structure, accountability, and measurable results to our team.",
@@ -65,7 +64,7 @@ const TestimonialsSection = () => {
               className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 sm:p-12 text-center border border-primary/10">
               
               <Quote className="mx-auto mb-6 text-primary/40" size={40} />
-              <blockquote className="text-lg sm:text-xl text-secondary-foreground/90 leading-relaxed italic mb-8">
+              <blockquote className="text-lg sm:text-xl text-secondary-foreground/90 leading-relaxed italic mb-8 whitespace-pre-wrap">
                 "{testimonials[current].quote}"
               </blockquote>
               <p className="font-bold text-secondary-foreground">{testimonials[current].name}</p>
