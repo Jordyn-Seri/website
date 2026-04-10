@@ -95,7 +95,9 @@ const ServicesSection = () => {
             ))}
           </div>
           <p className="text-muted-foreground leading-relaxed">
-            I'll work with you to audit your current processes and pain points, propose potential solutions, and then collaborate with your existing teams to deliver a result that will have you thinking, <span className="italic text-secondary font-medium">"I wish we did this sooner."</span>
+            I'll work with you to audit your current processes and pain points, propose potential solutions, and then collaborate with your existing teams to deliver a result that will have you thinking,
+            <br />
+            <span className="italic text-secondary font-medium">"I wish we did this sooner."</span>
           </p>
         </motion.div>
       </div>
