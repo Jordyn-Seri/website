@@ -14,12 +14,13 @@ const cards = [
   description:
   "Plan and implement automations for EHR documentation to reduce errors and improve value-based payment performance."
 },
-{
-  icon: Building2,
-  title: "Community Orgs",
-  description:
-  "Collaborate with your partners and teams to streamline processes across local networks."
-}];
+  {
+    icon: Building2,
+    title: "Community Orgs",
+    description:
+      "Collaborate with your teams to streamline existing processes."
+  }
+];
 
 
 const container = {
