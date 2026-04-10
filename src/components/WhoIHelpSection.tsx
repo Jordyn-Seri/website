@@ -16,9 +16,9 @@ const cards = [
 },
 {
   icon: Building2,
-  title: "Health Systems",
+  title: "Community Orgs",
   description:
-  "Collaborate with your engineers and IT to streamline processes across complex partner networks."
+  "Collaborate with your partners and teams to streamline processes across local networks."
 }];
 
 
