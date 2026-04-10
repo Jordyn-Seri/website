@@ -10,9 +10,9 @@ const testimonials = [
   },
 {
   quote:
-  "Working with Jordyn on our Medicaid program was a game-changer. She brought structure, accountability, and measurable results to our team.",
-  name: "Medicaid Program Director",
-  role: "State Health Agency"
+  "I was struck by Jordyn's attention to detail and her ability to simplify complexity. She consistently bridged the communication gap between technical and business associates.\n\nOn a more personal note, working with Jordyn was a pleasure. She is consistently positive and genuine. I hope our professional paths will cross again!",
+  name: "Mark Swelstad",
+  role: "Application Support Manager"
 },
 {
   quote:
