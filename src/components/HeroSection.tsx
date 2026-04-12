@@ -51,7 +51,6 @@ const HeroSection = () => {
             <Button size="lg" className="rounded-full px-8 text-base gap-2 bg-olive border border-secondary-foreground" onClick={openContactForm}>
                 Schedule a Consult <ArrowRight size={18} />
             </Button>
-            </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base border-secondary/20">
               <a href="#impact" className="bg-primary-foreground border border-secondary">See My Impact</a>
             </Button>
