@@ -14,12 +14,12 @@ const testimonials = [
   name: "Mark Swelstad",
   role: "Application Support Manager"
 },
-{
-  quote:
-  "Jordyn helped us build the dashboards and workflows we needed to scale. She thinks like a founder and executes like a seasoned PM.",
-  name: "Startup Founder",
-  role: "HealthTech Company"
-}];
+  {
+    quote: "You should hire Jordyn because she will not just deliver on your project, but work with you to make it better. Her commitment to communicating not just the requirements, but the context, enabled us to deliver better designs and ultimately a better product.",
+    name: "Alexander Wise",
+    role: "Software Engineer"
+  }
+];
 
 
 const TestimonialsSection = () => {
