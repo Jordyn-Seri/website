@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useContactForm } from "@/contexts/ContactFormContext";
 
 const HeroSection = () => {
   return (
