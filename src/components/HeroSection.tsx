@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useContactForm } from "@/contexts/ContactFormContext";
 
 const HeroSection = () => {
+  const { openContactForm } = useContactForm();
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
@@ -47,10 +48,9 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.45 }}
             className="mt-10 flex flex-wrap gap-4">
             
-            <Button asChild size="lg" className="rounded-full px-8 text-base gap-2">
-              <a className="bg-olive border border-secondary-foreground" href="mailto:hello@jordynseri.com">
+            <Button size="lg" className="rounded-full px-8 text-base gap-2 bg-olive border border-secondary-foreground" onClick={openContactForm}>
                 Schedule a Consult <ArrowRight size={18} />
-              </a>
+            </Button>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base border-secondary/20">
               <a href="#impact" className="bg-primary-foreground border border-secondary">See My Impact</a>

@@ -15,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { openContactForm } = useContactForm();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -44,8 +45,8 @@ const Navbar = () => {
               {l.label}
             </a>
           )}
-          <Button asChild size="sm" className="rounded-full px-6">
-            <a className="bg-olive" href="mailto:hello@jordynseri.com">Schedule a Consult</a>
+          <Button size="sm" className="rounded-full px-6 bg-olive" onClick={openContactForm}>
+            Schedule a Consult
           </Button>
         </div>
 
@@ -72,8 +73,8 @@ const Navbar = () => {
               {l.label}
             </a>
         )}
-          <Button asChild size="sm" className="rounded-full px-6 mt-2 w-full">
-            <a href="mailto:jordynseri@gmail.com">Schedule a Consult</a>
+          <Button size="sm" className="rounded-full px-6 mt-2 w-full bg-olive" onClick={() => { setMobileOpen(false); openContactForm(); }}>
+            Schedule a Consult
           </Button>
         </div>
       }
