@@ -15,7 +15,7 @@ const skills = [
 "Automation & Strategy",
 "Healthcare Industry Compliance",
 "Continuous Improvement",
-"Dashboard Building",
+"Dashboard Development",
 "Stakeholder Management",
 "Data Systems Design"];
 
