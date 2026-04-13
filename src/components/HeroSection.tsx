@@ -30,8 +30,8 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-secondary tracking-tight">
             
-            I Remove Administrative Obstacles.{" "}
-            <span className="text-olive">You Deliver Better Outcomes.</span>
+            I develop responsive, targeted solutions.{" "}
+            <span className="text-olive">You focus on the work that matters.</span>
           </motion.h1>
 
           <motion.p
