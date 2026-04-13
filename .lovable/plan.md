@@ -1,11 +1,18 @@
+
+
 ## Plan: Re-order Page Sections
 
-### Change
+Update `src/pages/Index.tsx` to rearrange the component order:
 
-Update `src/pages/Index.tsx` to reorder the components:
+**New order:**
+1. HeroSection
+2. ServicesSection (What I Offer)
+3. ImpactSection (Case Studies)
+4. WhoIHelpSection
+5. TestimonialsSection
+6. ExperienceMapSection (Healthcare from Every Angle)
+7. CredentialsSection
+8. PersonalSection (About Me)
 
-**Current order:** Hero → WhoIHelp → ExperienceMap → Services → Impact → Testimonials → Credentials → Personal
+Single-file edit — swap the order of JSX components in Index.tsx.
 
-**New order:** Hero → Impact (Case Studies) → Services (What I Offer) → WhoIHelp → Testimonials → ExperienceMap (Healthcare from Every Angle) → Personal (About Me) → Credentials
-
-This is a single-file edit — just rearranging the JSX component order in Index.tsx.
