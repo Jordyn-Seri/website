@@ -1,18 +1,20 @@
 
 
-## Plan: Re-order Page Sections
+## Plan: Move Credentials Before About Me
 
-Update `src/pages/Index.tsx` to rearrange the component order:
+Swap the order of `CredentialsSection` and `PersonalSection` in `src/pages/Index.tsx` so Credentials appears before About Me.
+
+**Current order (lines ~24-25):**
+```
+<PersonalSection />
+<CredentialsSection />
+```
 
 **New order:**
-1. HeroSection
-2. ServicesSection (What I Offer)
-3. ImpactSection (Case Studies)
-4. WhoIHelpSection
-5. TestimonialsSection
-6. ExperienceMapSection (Healthcare from Every Angle)
-7. CredentialsSection
-8. PersonalSection (About Me)
+```
+<CredentialsSection />
+<PersonalSection />
+```
 
-Single-file edit — swap the order of JSX components in Index.tsx.
+Single-line swap in one file.
 
