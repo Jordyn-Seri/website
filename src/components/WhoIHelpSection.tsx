@@ -35,7 +35,7 @@ const item = {
 
 const WhoIHelpSection = () => {
   return (
-    <section id="who-i-help" className="py-24 lg:py-32 bg-card">
+    <section id="who-i-help" className="py-16 lg:py-20 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
