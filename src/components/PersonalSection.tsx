@@ -40,7 +40,7 @@ const PersonalSection = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">When I'm not optimizing workflows or building dashboards, you'll find me rock climbing 5.fun+ level routes, overcoming my fears on a mountain bike, or doing some other adventurous hobby in the beauty of the outdoors.&nbsp;That is, unless I'm whittling down my queue of podcast episodes, working on a sewing project, or identifying a backyard bird.
               <br /><br />
-              I believe the same discipline, focus, and problem-solving mindset that fuels my love of learning new things is what makes me well-rounded in my professional life as well.
+              I believe the same discipline, focus, and problem-solving mindset that fuels my love of learning new hobbies is what makes me well-rounded in my professional life as well.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
             </p>
