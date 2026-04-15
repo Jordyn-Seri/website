@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
   return (
-    <section className="py-24 lg:py-32 bg-secondary">
+    <section className="py-16 lg:py-20 bg-secondary">
       <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -17,19 +17,16 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <HeroSection />
-        <div className="h-16 bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--card))]" />
+        <div className="h-32 bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--card))]" />
         <WhoIHelpSection />
-        <div className="h-16 bg-gradient-to-b from-[hsl(var(--card))] to-[hsl(var(--background))]" />
+        <div className="h-32 bg-gradient-to-b from-[hsl(var(--card))] to-[hsl(var(--background))]" />
         <ServicesSection />
-        <div className="h-16 bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--card))]" />
+        <div className="h-32 bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--card))]" />
         <ImpactSection />
-        <div className="h-16 bg-gradient-to-b from-[hsl(var(--card))] to-[hsl(var(--card))]" />
         <ExperienceMapSection />
-        <div className="h-16 bg-gradient-to-b from-[hsl(var(--card))] to-[hsl(var(--secondary))]" />
         <TestimonialsSection />
-        <div className="h-16 bg-gradient-to-b from-[hsl(var(--secondary))] to-[hsl(var(--card))]" />
         <CredentialsSection />
-        <div className="h-16 bg-gradient-to-b from-[hsl(var(--card))] to-[hsl(var(--background))]" />
+        <div className="h-32 bg-gradient-to-b from-[hsl(var(--card))] to-[hsl(var(--background))]" />
         <PersonalSection />
         <Footer />
         <ContactFormDialog />
