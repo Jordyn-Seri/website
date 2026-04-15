@@ -1,43 +1,42 @@
 
 
-## Plan: Re-order Sections and Smooth Background Transitions
-
-### New Section Order and Background Analysis
-
-| # | Section | Current BG | Adjacent transition needed |
-|---|---------|-----------|--------------------------|
-| 1 | Hero | gradient/background | → bg-card |
-| 2 | Who I Help | bg-card | → bg-card (same) |
-| 3 | Credentials | bg-card | → background |
-| 4 | Services | background | → bg-card |
-| 5 | Experience Map | bg-card | → background |
-| 6 | Impact (Case Studies) | background | → bg-secondary |
-| 7 | Testimonials | bg-secondary | → background |
-| 8 | Personal (About Me) | background | → footer |
+## Plan: Reduce Section Padding and Smooth Gradients
 
 ### Changes
 
-**1. `src/pages/Index.tsx`** — Reorder components and add gradient transition dividers between sections where background colors change:
+**1. Reduce vertical padding on all sections** — Change `py-24 lg:py-32` to `py-16 lg:py-20` across these files:
+- `src/components/WhoIHelpSection.tsx`
+- `src/components/ServicesSection.tsx`
+- `src/components/ImpactSection.tsx`
+- `src/components/ExperienceMapSection.tsx`
+- `src/components/CredentialsSection.tsx`
+- `src/components/PersonalSection.tsx`
+- `src/components/TestimonialsSection.tsx`
+
+**2. Update `src/pages/Index.tsx`** — Replace gradient dividers:
+- Change all `h-16` gradient divs to `h-32` for a much longer, subtler blend between sections
+- **Exception**: Remove the gradient divs immediately before and after `TestimonialsSection` — the Testimonials section will have hard edges (no gradient transition)
+
+### Result
 
 ```
 Hero
-  ↓ gradient div (background → card)
-WhoIHelp
-Credentials  ← both bg-card, no divider needed
-  ↓ gradient div (card → background)
-Services
-  ↓ gradient div (background → card)
-ExperienceMap
-  ↓ gradient div (card → background)
-Impact
-  ↓ gradient div (background → secondary)
-Testimonials
-  ↓ gradient div (secondary → background)
-Personal
+  ↓ h-32 gradient (background → card)     ← long subtle blend
+WhoIHelp (bg-card)
+  ↓ h-32 gradient (card → background)
+Services (background)
+  ↓ h-32 gradient (background → card)
+Impact (bg-card)
+  ↓ h-32 gradient (card → card)
+ExperienceMap (bg-card)
+  [no gradient — hard edge]
+Testimonials (bg-secondary)               ← stark lines top & bottom
+  [no gradient — hard edge]
+Credentials (bg-card)
+  ↓ h-32 gradient (card → background)
+Personal (background)
 Footer
 ```
 
-Each gradient div is a simple `<div className="h-12 bg-gradient-to-b from-[hsl(var(--X))] to-[hsl(var(--Y))]" />` element using the theme's CSS variables.
-
-**2. Update memory** for the new section order.
+Seven section files get padding reduced; one layout file gets gradient heights increased and two gradients removed.
 
