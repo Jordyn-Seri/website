@@ -1,33 +1,43 @@
 
 
-## Plan: Smooth Background Transitions Between Sections
+## Plan: Re-order Sections and Smooth Background Transitions
 
-### Problem
-Sections jump between `background`, `bg-card`, and `bg-secondary` with hard edges, creating a jarring visual effect.
+### New Section Order and Background Analysis
 
-### Approach
-Add gradient dividers between sections that transition from one background color to the next. This will be done by adding `::before` or `::after` pseudo-element gradients at the top/bottom of sections where the background changes, using a thin gradient overlay.
+| # | Section | Current BG | Adjacent transition needed |
+|---|---------|-----------|--------------------------|
+| 1 | Hero | gradient/background | → bg-card |
+| 2 | Who I Help | bg-card | → bg-card (same) |
+| 3 | Credentials | bg-card | → background |
+| 4 | Services | background | → bg-card |
+| 5 | Experience Map | bg-card | → background |
+| 6 | Impact (Case Studies) | background | → bg-secondary |
+| 7 | Testimonials | bg-secondary | → background |
+| 8 | Personal (About Me) | background | → footer |
 
 ### Changes
 
-**1. Add a reusable CSS utility for section gradient transitions** (`src/index.css`)
-- Add gradient fade classes that blend from one bg to the next (e.g., `background → card`, `card → secondary`, etc.)
+**1. `src/pages/Index.tsx`** — Reorder components and add gradient transition dividers between sections where background colors change:
 
-**2. Update each section with transition backgrounds:**
+```
+Hero
+  ↓ gradient div (background → card)
+WhoIHelp
+Credentials  ← both bg-card, no divider needed
+  ↓ gradient div (card → background)
+Services
+  ↓ gradient div (background → card)
+ExperienceMap
+  ↓ gradient div (card → background)
+Impact
+  ↓ gradient div (background → secondary)
+Testimonials
+  ↓ gradient div (secondary → background)
+Personal
+Footer
+```
 
-| Section | Current BG | New approach |
-|---------|-----------|-------------|
-| Services | none | Keep as-is (matches hero's bg) |
-| Impact | none | Add bottom gradient fading into card color |
-| WhoIHelp | bg-card | Keep bg-card, top gradient from background |
-| Testimonials | bg-secondary | Top gradient from card, bottom gradient to card |
-| ExperienceMap | bg-card | Keep bg-card |
-| Credentials | bg-card | Bottom gradient fading to background |
-| Personal | none | Top gradient from card |
+Each gradient div is a simple `<div className="h-12 bg-gradient-to-b from-[hsl(var(--X))] to-[hsl(var(--Y))]" />` element using the theme's CSS variables.
 
-Each transition will be a small `div` with a `bg-gradient-to-b` between the relevant color stops, inserted between sections in `Index.tsx`, or applied as top/bottom padding gradients within each section.
-
-### Implementation
-- Add ~5 gradient transition divs (simple `<div>` elements, ~32-48px tall) between sections in `Index.tsx` where background color changes
-- Each div uses `bg-gradient-to-b from-[color1] to-[color2]` with the theme's HSL variables
+**2. Update memory** for the new section order.
 
