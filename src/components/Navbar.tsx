@@ -5,9 +5,9 @@ import { useContactForm } from "@/contexts/ContactFormContext";
 
 const navLinks = [
 { label: "Who I Help", href: "#who-i-help" },
-{ label: "Experience", href: "#experience" },
 { label: "Services", href: "#services" },
 { label: "Impact", href: "#impact" },
+{ label: "Experience", href: "#experience" },
 { label: "Credentials", href: "#credentials" },
 { label: "About", href: "#about" }];
 
