@@ -33,12 +33,12 @@ const PersonalSection = () => {
             transition={{ duration: 0.6, delay: 0.15 }}>
             
             <span className="text-primary font-semibold text-sm tracking-widest uppercase">
-              Beyond the Data
+              ABOUT ME
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary mt-3 mb-6">
               The Human Behind the Data
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">When I'm not optimizing workflows or building dashboards, you'll find me rock climbing 5.fun+ level routes, overcoming my fears on a mountain bike, or doing some other adventurous hobby in the beauty of the outdoors.&nbsp;That is, unless I'm whittling down my queue of podcast episodes, working on a sewing project, or identifying a backyard bird.
+            <p className="text-muted-foreground leading-relaxed mb-6">When I'm not optimizing workflows or developing dashboards, you'll find me rock climbing 5.fun+ level routes, overcoming my fears on a mountain bike, or doing some other adventurous hobby in the beauty of the outdoors.&nbsp;That is, unless I'm whittling down my queue of podcast episodes, working on a sewing project, or identifying a backyard bird.
               <br /><br />
               I believe the same discipline, focus, and problem-solving mindset that fuels my love of learning new hobbies is what makes me well-rounded in my professional life as well.
             </p>
