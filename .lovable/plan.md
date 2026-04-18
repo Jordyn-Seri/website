@@ -1,42 +1,52 @@
 
+## Plan: Swap Background Colors for Sections
 
-## Plan: Reduce Section Padding and Smooth Gradients
+The user wants to swap which sections use `background` (midnight black) vs `bg-card` (nighttime blue). Currently sections alternate; this flips them.
+
+### Current vs Desired
+
+| Section | Current BG | Desired BG |
+|---|---|---|
+| WhoIHelp | bg-card | background |
+| Services | background | bg-card |
+| Impact (Case Studies) | bg-card | background |
+| ExperienceMap (Healthcare from Every Angle) | bg-card | bg-card *(already correct — "nighttime blue")* |
+| Testimonials | bg-secondary | unchanged |
+| Credentials | bg-card | background |
+| Personal (Human Behind the Data) | background | bg-card |
+
+Wait — re-reading: user says "healthcare from every angle should be nighttime blue" = bg-card (already is). Credentials should be midnight black = background. Personal should be nighttime blue = bg-card.
 
 ### Changes
 
-**1. Reduce vertical padding on all sections** — Change `py-24 lg:py-32` to `py-16 lg:py-20` across these files:
-- `src/components/WhoIHelpSection.tsx`
-- `src/components/ServicesSection.tsx`
-- `src/components/ImpactSection.tsx`
-- `src/components/ExperienceMapSection.tsx`
-- `src/components/CredentialsSection.tsx`
-- `src/components/PersonalSection.tsx`
-- `src/components/TestimonialsSection.tsx`
+**1. Section background swaps:**
+- `WhoIHelpSection.tsx`: `bg-card` → `background` (remove bg class)
+- `ServicesSection.tsx`: no bg → add `bg-card`
+- `ImpactSection.tsx`: `bg-card` → remove (background)
+- `CredentialsSection.tsx`: `bg-card` → remove (background)
+- `PersonalSection.tsx`: no bg → add `bg-card`
+- `ExperienceMapSection.tsx`: keep `bg-card`
+- `TestimonialsSection.tsx`: keep `bg-secondary`
 
-**2. Update `src/pages/Index.tsx`** — Replace gradient dividers:
-- Change all `h-16` gradient divs to `h-32` for a much longer, subtler blend between sections
-- **Exception**: Remove the gradient divs immediately before and after `TestimonialsSection` — the Testimonials section will have hard edges (no gradient transition)
-
-### Result
+**2. Update `src/pages/Index.tsx` gradient dividers** to match new adjacency:
 
 ```
-Hero
-  ↓ h-32 gradient (background → card)     ← long subtle blend
-WhoIHelp (bg-card)
-  ↓ h-32 gradient (card → background)
-Services (background)
-  ↓ h-32 gradient (background → card)
-Impact (bg-card)
-  ↓ h-32 gradient (card → card)
-ExperienceMap (bg-card)
-  [no gradient — hard edge]
-Testimonials (bg-secondary)               ← stark lines top & bottom
-  [no gradient — hard edge]
-Credentials (bg-card)
-  ↓ h-32 gradient (card → background)
-Personal (background)
+Hero (background)
+  ↓ gradient (background → background) = none needed, remove
+WhoIHelp (background)
+  ↓ gradient (background → card)
+Services (card)
+  ↓ gradient (card → background)
+Impact (background)
+  ↓ gradient (background → card)
+ExperienceMap (card)
+  [hard edge]
+Testimonials (secondary)
+  [hard edge]
+Credentials (background)
+  ↓ gradient (background → card)
+Personal (card)
 Footer
 ```
 
-Seven section files get padding reduced; one layout file gets gradient heights increased and two gradients removed.
-
+Result: 7 component files touched for bg classes + `Index.tsx` gradient dividers updated to match new color adjacencies.
