@@ -17,16 +17,16 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <HeroSection />
-        <div className="h-32 bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--card))]" />
         <WhoIHelpSection />
-        <div className="h-32 bg-gradient-to-b from-[hsl(var(--card))] to-[hsl(var(--background))]" />
-        <ServicesSection />
         <div className="h-32 bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--card))]" />
+        <ServicesSection />
+        <div className="h-32 bg-gradient-to-b from-[hsl(var(--card))] to-[hsl(var(--background))]" />
         <ImpactSection />
+        <div className="h-32 bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--card))]" />
         <ExperienceMapSection />
         <TestimonialsSection />
         <CredentialsSection />
-        <div className="h-32 bg-gradient-to-b from-[hsl(var(--card))] to-[hsl(var(--background))]" />
+        <div className="h-32 bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--card))]" />
         <PersonalSection />
         <Footer />
         <ContactFormDialog />
