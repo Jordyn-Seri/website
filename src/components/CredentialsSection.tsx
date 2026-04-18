@@ -43,7 +43,7 @@ const CredentialsSection = () => {
             Expertise
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary mt-3">
-            Credentials & Tools
+            Credentials
           </h2>
         </motion.div>
 
