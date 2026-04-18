@@ -4,7 +4,7 @@ import profilePhoto from "@/assets/profile-photo.jpg";
 
 const PersonalSection = () => {
   return (
-    <section id="about" className="py-16 lg:py-20">
+    <section id="about" className="py-16 lg:py-20 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           {/* Photo placeholder */}
