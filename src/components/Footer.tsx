@@ -4,7 +4,7 @@ const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="bg-secondary py-16">
+    <footer className="bg-secondary py-8">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary/10 text-center">
+        <div className="mt-6 pt-6 border-t border-primary/10 text-center">
           <p className="text-sm text-secondary-foreground/50">
             © {new Date().getFullYear()} Jordyn Seri. All rights reserved.
           </p>
